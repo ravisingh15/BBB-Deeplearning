@@ -11,7 +11,10 @@ st.title('BBB Prediction')
 st.header('NLP based deep-learning model to predict the Blood-Brain-Barrier Permeability of drugs')
 #Cc1ccccc1
 ##Taking input
-smiles=st.text_input('Please ender smiles of compounds')
+with st.form(key='input_form'):
+	smiles = st.text_input(label='Please ender smiles of compounds')
+	submit_button = st.form_submit_button(label='Submit')
+
 m = Chem.MolFromSmiles(smiles)
 #st.write(m)
 #st.write("Checking the structure")
