@@ -5,7 +5,7 @@ import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import Draw
 
-'''
+
 #Title of the project 
 st.title('BBB Prediction')
 st.header('NLP based deep-learning model to predict the Blood-Brain-Barrier Permeability of drugs')
@@ -16,4 +16,3 @@ m = Chem.MolFromSmiles(smiles)
 st.write(m)
 #st.write("Checking the structure")
 #st.write(Draw.MolToImage(m))
-'''
