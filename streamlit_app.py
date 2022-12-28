@@ -12,4 +12,4 @@ smiles=st.text_input('Please ender smiles of compounds')
 m = Chem.MolFromSmiles(smiles)
 with st.container():
    st.write("Checking the structure")
-   st.write(m)
+   st.write(Draw.MolToImage(m))
