@@ -4,6 +4,9 @@ import streamlit as st
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import Draw
+import tensorflow as tf
+from tensorflow.keras.preprocessing.text import Tokenizer
+
 
 
 #Title of the project 
@@ -18,6 +21,6 @@ with st.form(key='input_form'):
 	im=Draw.MolToImage(m)
 	st.image(im)
 	st.write('Generated structure')
-	selfie=sf.encoder(smiles)
-	st.write(selfie)
+selfie=sf.encoder(smiles)
+print(selfie)	
 #with st.container():
