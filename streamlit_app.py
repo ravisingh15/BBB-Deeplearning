@@ -17,4 +17,5 @@ with st.form(key='input_form'):
 	m = Chem.MolFromSmiles(smiles)
 	im=Draw.MolToImage(m)
 	st.image(im)
+	st.write('Generated structure')
 #with st.container():
