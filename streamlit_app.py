@@ -30,10 +30,10 @@ st.write(a)
 #sel_list=[sel_pre_proc]
 ##st.write(sel_list)
 #load tensorflow text vectorization model
-preprocess = tf.keras.models.load_model('feature_calculato')
+preprocess = tf.keras.models.load_model('my_model')
 st.write(preprocess)
-text_preprocess= preprocess.predict(sel_list)
-st.write(text_preprocess)
+#text_preprocess= preprocess.predict(sel_list)
+#st.write(text_preprocess)
 
 #st.write(sel_list)		
 #with st.container():
