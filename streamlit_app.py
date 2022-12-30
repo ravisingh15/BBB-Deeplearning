@@ -5,7 +5,7 @@ import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import Draw
 import tensorflow as tf
-from tensorflow.keras.preprocessing.text import Tokenizer
+#from tensorflow.keras.preprocessing.text import Tokenizer
 
 
 
@@ -22,6 +22,8 @@ with st.form(key='input_form'):
 	st.image(im)
 	st.write('Generated structure')
 	selfie=sf.encoder(smiles)
-st.write(selfie)
-		
+#st.write(selfie)
+#pre-processing the selfies
+sel_pre_proc=selfie.replace('][',' ').replace(']','').replace('[','')
+st.write(sel_pre_proc)		
 #with st.container():
