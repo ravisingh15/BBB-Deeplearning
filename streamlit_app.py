@@ -28,7 +28,7 @@ sel_pre_proc=selfie.replace('][',' ').replace(']','').replace('[','')
 sel_list=[sel_pre_proc]
 st.write(sel_list)
 #load tensorflow text vectorization model
-preprocess = tf.keras.models.load_model('feature_calculator')
+preprocess = tf.keras.models.load_model('feature_calculator',compile=False)
 st.write(preprocess)
 text_preprocess= preprocess.predict(sel_list)
 st.write(text_preprocess)
