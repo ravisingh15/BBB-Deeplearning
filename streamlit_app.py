@@ -25,5 +25,6 @@ with st.form(key='input_form'):
 #st.write(selfie)
 #pre-processing the selfies
 sel_pre_proc=selfie.replace('][',' ').replace(']','').replace('[','')
-st.write(sel_pre_proc)		
+sel_list=[sel_pre_proc]
+st.write(sel_list)		
 #with st.container():
