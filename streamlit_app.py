@@ -41,7 +41,7 @@ text_preprocessing=tf.keras.layers.TextVectorization(
 vocab = joblib.load('vocab1.sav')
 text_preprocessing.adapt(vocab)
 st.write(text_preprocessing)
-#preprocess = tf.keras.models.load_model('feature_calculator', options=tf.saved_model.LoadOptions(allow_partial_checkpoint=True))
+preprocess = tf.keras.models.load_model('my_model') #options=tf.saved_model.LoadOptions(allow_partial_checkpoint=True))
 st.write(preprocess)
 #text_preprocess= preprocess.predict(sel_list)
 #st.write(text_preprocess)
