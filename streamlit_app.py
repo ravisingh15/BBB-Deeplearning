@@ -22,5 +22,6 @@ with st.form(key='input_form'):
 	st.image(im)
 	st.write('Generated structure')
 	selfie=sf.encoder(smiles)
-	st.write(selfie)	
+st.write(selfie)
+		
 #with st.container():
