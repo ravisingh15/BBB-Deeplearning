@@ -6,10 +6,6 @@ import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import Draw
 import tensorflow as tf
-#from tensorflow.keras.preprocessing.text import Tokenizer
-
-
-
 #Title of the project 
 st.title('BBB Prediction')
 st.header('NLP based deep-learning model to predict the Blood-Brain-Barrier Permeability of drugs')
@@ -27,7 +23,7 @@ st.write(selfie)
 #pre-processing the selfies
 sel_pre_proc=selfie.replace('][',' ').replace(']','').replace('[','')
 a=tf.convert_to_tensor(sel_pre_proc)
-st.write(a)
+@st.write(a)
 #sel_list=[sel_pre_proc]
 ##st.write(sel_list)
 #load tensorflow text vectorization model
@@ -40,10 +36,12 @@ text_preprocessing=tf.keras.layers.TextVectorization(
 
 vocab = joblib.load('vocab1.sav')
 text_preprocessing.adapt(vocab)
-predict=text_preprocessing(a)
-st.write(predict)
+processed_input=text_preprocessing(a)
+#st.write(predict)
 model = tf.keras.models.load_model('my_model') #options=tf.saved_model.LoadOptions(allow_partial_checkpoint=True))
-st.write(model)
+pred=model.predict(processed_input)
+st.write(pred)
+#st.write(model)
 #text_preprocess= preprocess.predict(sel_list)
 #st.write(text_preprocess)
 
