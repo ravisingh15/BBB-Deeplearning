@@ -37,6 +37,7 @@ text_preprocessing=tf.keras.layers.TextVectorization(
 vocab = joblib.load('vocab1.sav')
 text_preprocessing.adapt(vocab)
 processed_input=text_preprocessing(a)
+st.write(processed_input)
 #st.write(predict)
 model = tf.keras.models.load_model('my_model') #options=tf.saved_model.LoadOptions(allow_partial_checkpoint=True))
 pred=model.predict(processed_input)
