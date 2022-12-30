@@ -21,6 +21,6 @@ with st.form(key='input_form'):
 	im=Draw.MolToImage(m)
 	st.image(im)
 	st.write('Generated structure')
-selfie=sf.encoder(smiles)
-st.write(selfie)	
+	selfie=sf.encoder(smiles)
+	st.write(selfie)	
 #with st.container():
