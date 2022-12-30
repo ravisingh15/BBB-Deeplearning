@@ -29,6 +29,7 @@ sel_list=[sel_pre_proc]
 st.write(sel_list)
 #load tensorflow text vectorization model
 preprocess = tf.keras.models.load_model('feature_calculator')
+st.write(preprocess)
 text_preprocess= preprocess.predict(sel_list)
 st.write(text_preprocess)
 
