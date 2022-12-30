@@ -25,8 +25,10 @@ with st.form(key='input_form'):
 st.write(selfie)
 #pre-processing the selfies
 sel_pre_proc=selfie.replace('][',' ').replace(']','').replace('[','')
-sel_list=[sel_pre_proc]
-st.write(sel_list)
+a=tf.convert_to_tensor(sel_pre_proc)
+st.write(a)
+#sel_list=[sel_pre_proc]
+##st.write(sel_list)
 #load tensorflow text vectorization model
 preprocess = tf.keras.models.load_model('feature_calculator')
 st.write(preprocess)
