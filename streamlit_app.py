@@ -22,7 +22,8 @@ with st.form(key='input_form'):
 st.write(selfie)
 #pre-processing the selfies
 sel_pre_proc=selfie.replace('][',' ').replace(']','').replace('[','')
-a=tf.convert_to_tensor(sel_pre_proc)
+a=[sel_pre_proc]
+b=tf.convert_to_tensor(a)
 #st.write(a)
 #sel_list=[sel_pre_proc]
 ##st.write(sel_list)
@@ -36,11 +37,11 @@ text_preprocessing=tf.keras.layers.TextVectorization(
 
 vocab = joblib.load('vocab1.sav')
 text_preprocessing.adapt(vocab)
-processed_input=text_preprocessing(a)
-st.write(processed_input)
+processed_input=text_preprocessing(b)
+#st.write(processed_input)
 #st.write(predict)
 model = tf.keras.models.load_model('my_model') #options=tf.saved_model.LoadOptions(allow_partial_checkpoint=True))
-pred=model.predict(processed_input[0])
+pred=model.predict(processed_input)
 st.write(pred)
 #st.write(model)
 #text_preprocess= preprocess.predict(sel_list)
