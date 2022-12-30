@@ -23,7 +23,7 @@ st.write(selfie)
 #pre-processing the selfies
 sel_pre_proc=selfie.replace('][',' ').replace(']','').replace('[','')
 a=tf.convert_to_tensor(sel_pre_proc)
-@st.write(a)
+#st.write(a)
 #sel_list=[sel_pre_proc]
 ##st.write(sel_list)
 #load tensorflow text vectorization model
