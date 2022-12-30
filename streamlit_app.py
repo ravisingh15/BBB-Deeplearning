@@ -1,4 +1,5 @@
 #importing all the necessary libraries
+import joblib
 import selfies as sf
 import streamlit as st
 import pandas as pd
@@ -30,7 +31,15 @@ st.write(a)
 #sel_list=[sel_pre_proc]
 ##st.write(sel_list)
 #load tensorflow text vectorization model
-st.write(tf.__version__)
+text_preprocessing=tf.keras.layers.TextVectorization(
+    standardize=None,
+    split='whitespace',
+    ngrams=6,
+    output_mode='tf-idf',
+    output_sequence_length=None)
+
+vocab = joblib.load('vocab.sav')
+text_preprocessing.adapt(vocab)
 preprocess = tf.keras.models.load_model('feature_calculator', options=tf.saved_model.LoadOptions(allow_partial_checkpoint=True))
 st.write(preprocess)
 #text_preprocess= preprocess.predict(sel_list)
