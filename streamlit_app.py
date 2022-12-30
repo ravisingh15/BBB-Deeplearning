@@ -31,7 +31,7 @@ st.write(a)
 ##st.write(sel_list)
 #load tensorflow text vectorization model
 st.write(tf.__version__)
-preprocess = tf.keras.models.load_model('my_model' options=tf.saved_model.LoadOptions(allow_partial_checkpoint=True))
+preprocess = tf.keras.models.load_model('my_model', options=tf.saved_model.LoadOptions(allow_partial_checkpoint=True))
 st.write(preprocess)
 #text_preprocess= preprocess.predict(sel_list)
 #st.write(text_preprocess)
