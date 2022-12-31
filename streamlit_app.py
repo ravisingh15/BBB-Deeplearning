@@ -18,6 +18,7 @@ with st.form(key='input_form'):
 	im=Draw.MolToImage(m)
 	st.image(im)
 	st.write('Generated structure')
+if not smiles:
 selfie=sf.encoder(smiles)
 #st.write(selfie)
 #pre-processing the selfies
