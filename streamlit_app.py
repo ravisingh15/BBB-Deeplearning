@@ -14,13 +14,14 @@ st.header('NLP based deep-learning model to predict the Blood-Brain-Barrier Perm
 with st.form(key='input_form'):
 	smiles = st.text_input(label='Please enter CANONICAL SMILES')
 	submit_button = st.form_submit_button(label='Submit')
+	if not smiles:
+		pass
 	m = Chem.MolFromSmiles(smiles)
 	im=Draw.MolToImage(m)
 	st.image(im)
 	st.write('Generated structure')
-if not smiles:
-	pass
-else: selfie=sf.encoder(smiles)
+
+selfie=sf.encoder(smiles)
 #st.write(selfie)
 #pre-processing the selfies
 sel_pre_proc=selfie.replace('][',' ').replace(']','').replace('[','')
