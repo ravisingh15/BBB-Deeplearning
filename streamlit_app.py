@@ -19,6 +19,7 @@ with st.form(key='input_form'):
 	st.image(im)
 	st.write('Generated structure')
 if not smiles:
+	pass
 selfie=sf.encoder(smiles)
 #st.write(selfie)
 #pre-processing the selfies
