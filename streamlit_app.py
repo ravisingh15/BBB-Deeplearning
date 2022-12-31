@@ -13,9 +13,9 @@ st.header('NLP based deep-learning model to predict the Blood-Brain-Barrier Perm
 ##Taking input
 with st.form(key='input_form'):
 	smiles = st.text_input(label='Please enter CANONICAL SMILES')
-	submit_button = st.form_submit_button(label='Submit')
 	if not smiles:
-		pass
+		st.stop()
+	submit_button = st.form_submit_button(label='Submit')
 	m = Chem.MolFromSmiles(smiles)
 	im=Draw.MolToImage(m)
 	st.image(im)
