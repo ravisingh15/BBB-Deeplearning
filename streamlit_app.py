@@ -2,7 +2,6 @@
 import joblib
 import selfies as sf
 import streamlit as st
-import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import Draw
 import tensorflow as tf
