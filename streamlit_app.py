@@ -47,9 +47,3 @@ pred=model.predict(processed_input)
 if pred[0]<0.5:
     st.markdown(':red[The given molecule is BBB **Impermeable**]')
 else: st.write(':blue[The given molecule is BBB **Permeable**]')
-#st.write(model)
-#text_preprocess= preprocess.predict(sel_list)
-#st.write(text_preprocess)
-
-#st.write(sel_list)		
-#with st.container():
