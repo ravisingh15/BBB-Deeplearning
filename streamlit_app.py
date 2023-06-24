@@ -36,8 +36,9 @@ text_preprocessing=tf.keras.layers.TextVectorization(
     ngrams=6,
     output_mode='tf-idf',
     output_sequence_length=None)
-
+st.write('ye theek hai ')
 vocab = joblib.load('vocab1.sav')
+st.write('kya ye theek hai')
 text_preprocessing.adapt(vocab)
 processed_input=text_preprocessing(b)
 #st.write(processed_input)
