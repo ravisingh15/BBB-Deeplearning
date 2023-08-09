@@ -5,6 +5,7 @@ import streamlit as st
 from rdkit import Chem
 from rdkit.Chem import Draw
 import tensorflow as tf
+import pandas as pd
 #Title of the project 
 st.title('BBB Prediction')
 st.header('NLP based deep-learning model to predict the Blood-Brain-Barrier Permeability of drugs')
@@ -37,7 +38,9 @@ text_preprocessing=tf.keras.layers.TextVectorization(
     output_mode='tf-idf',
     output_sequence_length=None)
 #st.write('ye theek hai ')
-vocab = joblib.load('vocab1.sav')
+#vocab = joblib.load('vocab1.sav')  #This is causing error due to pandas uncompatibility
+vocab_file=pd.read_csv('vocav.csv')
+vocab=vocab_file.Selfies
 #st.write('kya ye theek hai')
 text_preprocessing.adapt(vocab)
 processed_input=text_preprocessing(b)
