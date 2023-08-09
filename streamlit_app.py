@@ -39,7 +39,7 @@ text_preprocessing=tf.keras.layers.TextVectorization(
     output_sequence_length=None)
 #st.write('ye theek hai ')
 #vocab = joblib.load('vocab1.sav')  #This is causing error due to pandas uncompatibility
-vocab_file=pd.read_csv('vocav.csv')
+vocab_file=pd.read_csv('vocab.csv')
 vocab=vocab_file.Selfies
 #st.write('kya ye theek hai')
 text_preprocessing.adapt(vocab)
